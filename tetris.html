@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6214770479335363"
-     crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tetris</title>
     <style>
-
-                body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -266,6 +263,9 @@
 
     <div class="main-content">
         <h1><b>Tetris</b></h1>
+        <div id="score" style="font-size: 24px; color: white; margin-top: 20px;">
+            Score: <span id="scoreValue">0</span>
+        </div>
         <div class="game-container">
             <canvas id="gameCanvas" width="300" height="600"></canvas>
         </div>
@@ -329,6 +329,7 @@
         let grid = Array.from({ length: ROWS }, () => Array(COLUMNS).fill(BLACK));
         let currentTetromino = new Tetromino(getRandomShape(), getRandomColor());
         let dropCounter = 0;
+        let score = 0;  // Variable to track the score
 
         // Helper functions
         function getRandomShape() {
@@ -374,7 +375,15 @@
                     i--;
                 }
             }
+            if (linesCleared > 0) {
+                score += linesCleared * 100;  // Add score for each cleared line
+                updateScoreDisplay();  // Update the score display
+            }
             return linesCleared;
+        }
+
+        function updateScoreDisplay() {
+            document.getElementById('scoreValue').textContent = score;
         }
 
         function drawGrid() {
@@ -432,65 +441,50 @@
             grid = Array.from({ length: ROWS }, () => Array(COLUMNS).fill(BLACK));
             currentTetromino = new Tetromino(getRandomShape(), getRandomColor());
             dropCounter = 0;
+            score = 0;  // Reset score on game over
+            updateScoreDisplay();  // Update score display
         }
 
-// Controls
-document.addEventListener('keydown', (event) => {
-    const key = event.key.toLowerCase(); // Normalize to lowercase for simplicity
+        // Controls
+        document.addEventListener('keydown', (event) => {
+            const key = event.key.toLowerCase(); // Normalize to lowercase for simplicity
 
-    if (key === 'arrowleft' || key === 'a') {
-        currentTetromino.move(-1, 0);
-        if (checkCollision(currentTetromino)) currentTetromino.move(1, 0);
-    } else if (key === 'arrowright' || key === 'd') {
-        currentTetromino.move(1, 0);
-        if (checkCollision(currentTetromino)) currentTetromino.move(-1, 0);
-    } else if (key === 'arrowdown' || key === 's') {
-        currentTetromino.move(0, 1);
-        if (checkCollision(currentTetromino)) currentTetromino.move(0, -1);
-    } else if (key === 'arrowup' || key === 'w') {
-        currentTetromino.rotate();
-        if (checkCollision(currentTetromino)) {
-            // Undo rotation if it results in a collision
-            for (let i = 0; i < 3; i++) currentTetromino.rotate();
-        }
-    }
-    else if (key === 'a' || key === 'a') {
-        currentTetromino.move(-1, 0);
-        if (checkCollision(currentTetromino)) currentTetromino.move(1, 0);
-    } else if (key === 'd' || key === 'd') {
-        currentTetromino.move(1, 0);
-        if (checkCollision(currentTetromino)) currentTetromino.move(-1, 0);
-    } else if (key === 's' || key === 's') {
-        currentTetromino.move(0, 1);
-        if (checkCollision(currentTetromino)) currentTetromino.move(0, -1);
-    } else if (key === 'w' || key === 'w') {
-        currentTetromino.rotate();
-        if (checkCollision(currentTetromino)) {
-            // Undo rotation if it results in a collision
-            for (let i = 0; i < 3; i++) currentTetromino.rotate();
-        }
-    }
-    else if (key === 'A' || key === 'a') {
-        currentTetromino.move(-1, 0);
-        if (checkCollision(currentTetromino)) currentTetromino.move(1, 0);
-    } else if (key === 'D' || key === 'd') {
-        currentTetromino.move(1, 0);
-        if (checkCollision(currentTetromino)) currentTetromino.move(-1, 0);
-    } else if (key === 'S' || key === 's') {
-        currentTetromino.move(0, 1);
-        if (checkCollision(currentTetromino)) currentTetromino.move(0, -1);
-    } else if (key === 'W' || key === 'w') {
-        currentTetromino.rotate();
-        if (checkCollision(currentTetromino)) {
-            // Undo rotation if it results in a collision
-            for (let i = 0; i < 3; i++) currentTetromino.rotate();
-        }
-    }
-});
+            if (key === 'arrowleft' || key === 'a') {
+                currentTetromino.move(-1, 0);
+                if (checkCollision(currentTetromino)) {
+                    currentTetromino.move(1, 0);
+                }
+            }
+            if (key === 'arrowright' || key === 'd') {
+                currentTetromino.move(1, 0);
+                if (checkCollision(currentTetromino)) {
+                    currentTetromino.move(-1, 0);
+                }
+            }
+            if (key === 'arrowdown' || key === 's') {
+                currentTetromino.move(0, 1);
+                if (checkCollision(currentTetromino)) {
+                    currentTetromino.move(0, -1);
+                    mergeTetromino(currentTetromino);
+                    clearLines();
+                    currentTetromino = new Tetromino(getRandomShape(), getRandomColor());
+                    if (checkCollision(currentTetromino)) {
+                        alert('Game Over!');
+                        resetGame();
+                    }
+                }
+            }
+            if (key === 'arrowup' || key === 'w') {
+                currentTetromino.rotate();
+                if (checkCollision(currentTetromino)) {
+                    currentTetromino.rotate();
+                    currentTetromino.rotate();
+                    currentTetromino.rotate();
+                }
+            }
+        });
 
-        // Start game
         update();
     </script>
-
 </body>
 </html>
