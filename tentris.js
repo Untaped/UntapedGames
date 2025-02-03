@@ -10,6 +10,25 @@ const ROWS = HEIGHT / GRID_SIZE;
 const FPS = 10;
 let score = 0;
 
+function updateScore(linesCleared) {
+    score += linesCleared * 100; // Add 100 points per cleared line
+    document.getElementById('scoreValue').textContent = score;
+}
+
+function clearLines() {
+    let linesCleared = 0;
+    for (let i = 0; i < grid.length; i++) {
+        if (!grid[i].includes(BLACK)) {
+            grid.splice(i, 1);
+            grid.unshift(Array(COLUMNS).fill(BLACK));
+            linesCleared++;
+            i--;
+        }
+    }
+    updateScore(linesCleared); // Update score after clearing lines
+    return linesCleared;
+}
+
 // Colors
 const BLACK = 'black';
 const WHITE = 'white';
