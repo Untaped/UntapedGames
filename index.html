@@ -406,24 +406,8 @@
                     <div class="game-card" onclick="location.href='2048.html';">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/2048_Icon.png" alt="2048 Game">
                         <h3>2048</h3>
-                    </div>
-                    <div class="game-card" onclick="location.href='snake.html';">
-                        <img src="https://cdn3.iconfinder.com/data/icons/flat-games-and-toys/16/19_game-toy-snake-videogame-videogame-1024.png" alt="Snake Game">
-                        <h3>Snake</h3>
-                    </div>
-                    <div class="game-card" onclick="location.href='tetris.html';">
-                        <img src="https://cdn1.iconfinder.com/data/icons/objects-16/512/105480_-_computer_game_tetris-1024.png" alt="Tetris Game">
-                        <h3>Tetris</h3>
-                    </div>
-                    <div class="game-card" onclick="location.href='game1.html';">
-                        <img src="https://pressbooks.library.torontomu.ca/h5pbook/wp-content/uploads/sites/27/2018/04/memory-game-icon.png" alt="Matching Game">
-                        <h3>Matching</h3>
-                    </div>
-                    <div class="game-card" onclick="location.href='2048.html';">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/2048_Icon.png" alt="2048 Game">
-                        <h3>2048</h3>
-                    </div>
                 </div>
+            </div>
             </div>
             <button class="carousel-btn right-btn" onclick="scrollCarousel(1)">&#10095;</button>
         </div>
@@ -449,70 +433,20 @@
         function updatePopularGames() {
             let games = [
                 { 
-                    name: 'Wordle', 
-                    url: 'https://www.nytimes.com/games/wordle/index.html',
-                    img: 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Wordle_Logo.svg' 
-                },
-                { 
-                    name: 'Connections', 
-                    url: 'https://www.nytimes.com/games/connections',
-                    img: 'https://upload.wikimedia.org/wikipedia/commons/5/57/The_New_York_Times_Connections.svg' 
-                },
-                { 
-                    name: 'Strands', 
-                    url: 'https://www.nytimes.com/games/strands',
-                    img: 'https://upload.wikimedia.org/wikipedia/commons/1/14/The_New_York_Times_Strands.svg' 
-                },
-                { 
-                    name: 'Tiles', 
-                    url: 'https://www.nytimes.com/puzzles/tiles',
-                    img: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/The_New_York_Times_Tiles.svg' 
-                },
-                { 
-                    name: 'Sudoku', 
-                    url: 'https://www.nytimes.com/puzzles/sudoku',
-                    img: 'https://upload.wikimedia.org/wikipedia/commons/3/38/The_New_York_Times_Sudoku.svg' 
-                },
-                { 
-                    name: 'Letter Box', 
-                    url: 'https://www.nytimes.com/puzzles/letter-boxed',
-                    img: 'https://upload.wikimedia.org/wikipedia/commons/0/02/The_New_York_Times_Letter_Boxed.svg' 
-                },
-                { 
-                    name: 'Chess.com', 
-                    url: 'https://tinyurl.com/5x97852w',
-                    img: 'https://img.icons8.com/?size=100&id=C5LTcmsc3cr0&format=png&color=000000' 
-                },
-                { 
-                    name: 'Lichess', 
-                    url: 'https://lichess.org/',
-                    img: 'https://upload.wikimedia.org/wikipedia/commons/d/da/Lichess_Logo_2019.svg' 
-                },
-                { 
-                    name: 'Geoguessr', 
-                    url: 'https://www.geoguessr.com',
-                    img: 'https://www.geoguessr.com/_next/static/media/gg-pin.38be2948.svg'
-                },
-                { 
-                    name: 'TimeGuessr', 
-                    url: 'https://timeguessr.com',
-                    img: 'https://timeguessr.com/assets/branding/logo.svg'
-                },
-                { 
                     name: 'Slope', 
                     url: 'idk.html',
                     img: 'https://cdn.prod.website-files.com/66f147eaaaf0038a5876d26d/66f14af7e26953f7a24865bd_slope_logo-2%202%402x.png' 
                 },
                 { 
-                    name: '2048',
-                    url: 'https://2048.gg',
-                    img: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/2048_Icon.png'
+                    name: 'MOTO X3M', 
+                    url: 'MOTOX3M.html',
+                    img: 'https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=1200,height=1200,fit=cover,f=png/2c6d5a46cdbceada277c870ce1c389ee.jpg'
                 },
                 { 
-                    name: '2048 Cupcakes',
-                    url: 'https://2048.gg/cupcakes',
-                    img: 'https://d4.alternativeto.net/NamISr9EQrohoaKwUpoOzWnLSGzkx_sr1npA3Y3YAzM/rs:fill:618:394:1/g:no:0:0/YWJzOi8vZGlzdC9zLzIwNDgtY3VwY2FrZXMtZ2FtZV83NzEyODRfZnVsbC5qcGc.jpg'
-                }
+                    name: 'Paper.io', 
+                    url: 'paper.html',
+                    img: 'https://slope-play.com/data/image/game/slope-logo-1.jpg'
+                },
             ];
     
             // Retrieve stored click counts and sort games by popularity
@@ -554,81 +488,21 @@
 
     <center> <h2>Games</h2> </center>
     <div class="container">
-        <div class="box" onclick="trackPopularity('Wordle','https://www.nytimes.com/games/connections');">
-            <div class="box-content">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Wordle_Logo.svg" alt="Wordle">
-                <h3>Wordle</h3>
-            </div>
-        </div>
-        <div class="box" onclick="trackPopularity('Connectio ','https://www.nytimes.com/games/connections/index.html');">
-            <div class="box-content">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/The_New_York_Times_Connections.svg" alt="Connections">
-                <h3>Connection</h3>
-            </div>
-        </div>
-        <div class="box" onclick="trackPopularity('Strands','https://www.nytimes.com/games/strands');">
-            <div class="box-content">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/The_New_York_Times_Strands.svg" alt="Strands">
-                <h3>Strands</h3>
-            </div>
-        </div>
-        <div class="box" onclick="trackPopularity('Tiles','https://www.nytimes.com/puzzles/tiles');">
-            <div class="box-content">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/The_New_York_Times_Tiles.svg" alt="Tiles">
-                <h3>Tiles</h3>
-            </div>
-        </div>
-        <div class="box" onclick="trackPopularity('Sudoku','https://www.nytimes.com/puzzles/sudoku');">
-            <div class="box-content">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/The_New_York_Times_Sudoku.svg" alt="Sudoku">
-                <h3>Sudoku</h3>
-            </div>
-        </div>
-        <div class="box" onclick="trackPopularity('Letter Box','https://www.nytimes.com/puzzles/letter-boxed');">
-            <div class="box-content">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/The_New_York_Times_Letter_Boxed.svg" alt="Letter Box">
-                <h3>Letter Box</h3>
-            </div>
-        </div>
-        <div class="box" onclick="trackPopularity('Chess.com','https://www.chess.com/');">
-            <div class="box-content">
-                <img src="https://img.icons8.com/?size=100&id=C5LTcmsc3cr0&format=png&color=000000" alt="Letter Box">
-                <h3>Chess.com</h3>
-            </div>
-        </div>
-        <div class="box" onclick="trackPopularity('lichess','https://lichess.org/');">
-            <div class="box-content">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Lichess_Logo_2019.svg" alt="Letter Box">
-                <h3>lichess</h3>
-            </div>
-        </div>
-        <div class="box" onclick="trackPopularity('Geoguessr', 'https://www.geoguessr.com');">
-            <div class="box-content">
-                <img src="https://www.geoguessr.com/_next/static/media/gg-pin.38be2948.svg" alt="Geoguessr">
-                <h3>Geoguessr</h3>
-            </div>
-        </div>        
-        <div class="box" onclick="trackPopularity('TimeGuessr', 'https://timeguessr.com');">
-            <div class="box-content">
-                <img src="https://timeguessr.com/assets/branding/logo.svg" alt="Letter Box">
-                <h3>TimeGuessr</h3>
-            </div>
-        </div>
         <div class="box" onclick="trackPopularity('Slope','idk.html');">
             <div class="box-content">
                 <img src="https://cdn.prod.website-files.com/66f147eaaaf0038a5876d26d/66f14af7e26953f7a24865bd_slope_logo-2%202%402x.png" alt="Wordle">
                 <h3>Slope</h3>
             </div>
         </div>
-        <div class="box" onclick="trackPopularity('Slope','https://2048.gg');">
+        <div class="box" onclick="trackPopularity('Slope','MOTOX3.html');">
             <div class="box-content">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/2048_Icon.png" alt="Wordle">
-                <h3>2048</h3>
+                <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=1200,height=1200,fit=cover,f=png/2c6d5a46cdbceada277c870ce1c389ee.jpg" alt="Wordle">
+                <h3>MOTO X3M</h3>
             </div>
         </div>
         <div class="box" onclick="trackPopularity('Slope','paper.html');">
             <div class="box-content">
-                <img src="data:image/jpeg;base64,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" alt="Wordle">
+                <img src="https://slope-play.com/data/image/game/slope-logo-1.jpg" alt="Wordle">
                 <h3>Paper.io</h3>
             </div>
         </div>
