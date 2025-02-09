@@ -486,22 +486,47 @@
 
         function updatePopularGames() {
             let games = [
-                { 
-                    name: 'Slope', 
-                    url: 'idk.html',
-                    img: 'https://cdn.prod.website-files.com/66f147eaaaf0038a5876d26d/66f14af7e26953f7a24865bd_slope_logo-2%202%402x.png' 
-                },
-                { 
-                    name: 'MOTO X3M', 
-                    url: 'MOTOX3M.html',
-                    img: 'https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=1200,height=1200,fit=cover,f=png/2c6d5a46cdbceada277c870ce1c389ee.jpg'
-                },
-                { 
-                    name: 'Paper.io', 
-                    url: 'paper.html',
-                    img: 'https://slope-play.com/data/image/game/slope-logo-1.jpg'
-                },
-            ];
+            { 
+                name: 'Slope',
+                url: 'https://bestgradex.com/games/slope/index.html',
+                img: 'https://cdn.prod.website-files.com/66f147eaaaf0038a5876d26d/66f14af7e26953f7a24865bd_slope_logo-2%202%402x.png' 
+            },
+            { 
+                name: 'MOTO X3M', 
+                url: 'https://webglmath.github.io/moto-x3m/',
+                img: 'https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=1200,height=1200,fit=cover,f=png/2c6d5a46cdbceada277c870ce1c389ee.jpg'
+            },
+            { 
+                name: 'Paper.io', 
+                url: 'https://dnrweqffuwjtx.cloudfront.net/games/2023/unity3/paper-io/index.html',
+                img: 'https://slope-play.com/data/image/game/slope-logo-1.jpg'
+            },
+            { 
+                name: 'Shell Shockers', 
+                url: 'https://shellshock.io/',
+                img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc-SSpFIAgTauZ-k8N_NGkhUqSOSZ68z9XKQ&s'
+            },
+            { 
+                name: 'Eggy Car', 
+                url: 'https://faf-games.github.io/car/index.html',
+                img: 'https://eggy-car.github.io/img/logo.png'
+            },
+            { 
+                name: 'Tiny Fishing', 
+                url: 'https://webglmath.github.io/tiny-fishing/',
+                img: 'https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/c8cb366d52fc2a67fb313c344efdbc9e.png'
+            },
+            { 
+                name: 'Drive Rage', 
+                url: 'https://faf-games.github.io/game/drive-mad/dm.html',
+                img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMiPapJWgbCjDdCZp-Uy5sSYfY79RrDxZYzA&s'
+            },
+            { 
+                name: 'Fruit Merge', 
+                url: 'https://www.tafeldiploma.nl/gf/fruit-merge/5',
+                img: 'https://play-lh.googleusercontent.com/pb2HzIAVVAvad7z7YoSj5G4XScgEtO2ZCX8M10_BhzBuLS_0Cusq6I6AkQEO_LXY'
+            }
+        ]
     
             // Retrieve stored click counts and sort games by popularity
             games.forEach(game => {
@@ -562,6 +587,22 @@
             <div class="box" onclick="showGame('https://shellshock.io/', 'Paper.io')">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc-SSpFIAgTauZ-k8N_NGkhUqSOSZ68z9XKQ&s" alt="Paper.io">
                 <h3>Paper.io</h3>
+            </div>
+            <div class="box" onclick="showGame('https://faf-games.github.io/car/index.html', 'Paper.io')">
+                <img src="https://eggy-car.github.io/img/logo.png" alt="Paper.io">
+                <h3>Eggy Car</h3>
+            </div>
+            <div class="box" onclick="showGame('https://webglmath.github.io/tiny-fishing/', 'Paper.io')">
+                <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/c8cb366d52fc2a67fb313c344efdbc9e.png" alt="Paper.io">
+                <h3>Tiny Fishing</h3>
+            </div>
+            <div class="box" onclick="showGame('https://faf-games.github.io/game/drive-mad/dm.html', 'Paper.io')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMiPapJWgbCjDdCZp-Uy5sSYfY79RrDxZYzA&s" alt="Paper.io">
+                <h3>Drive Rage</h3>
+            </div>
+            <div class="box" onclick="showGame('https://www.tafeldiploma.nl/gf/fruit-merge/5', 'Paper.io')">
+                <img src="https://play-lh.googleusercontent.com/pb2HzIAVVAvad7z7YoSj5G4XScgEtO2ZCX8M10_BhzBuLS_0Cusq6I6AkQEO_LXY" alt="Paper.io">
+                <h3>Fruit Merge</h3>
             </div>
 
         </div>
