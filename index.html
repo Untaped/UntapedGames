@@ -193,14 +193,6 @@
             margin: 20px auto;
 
         }
-        .carousel-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            width: 90%;
-            margin: 20px auto;
-        }
 
         .game-carousel {
             width: 80%;
@@ -400,7 +392,6 @@
         }
 
     </style>
-</head>
 <body>
     <div class="navbar">
         <div class="dropdown" onclick="location.href='index.html';">
@@ -423,7 +414,24 @@
         </div>
     </div>
         </head>
-
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const searchInput = document.getElementById("searchInput");
+                const gameCards = document.querySelectorAll(".game-card, .box"); // Select both carousel and grid games
+        
+                searchInput.addEventListener("keyup", function () {
+                    let filter = searchInput.value.toLowerCase();
+                    gameCards.forEach(card => {
+                        let gameTitle = card.querySelector("h3").textContent.toLowerCase();
+                        if (gameTitle.includes(filter)) {
+                            card.style.display = "block";
+                        } else {
+                            card.style.display = "none";
+                        }
+                    });
+                });
+            });
+        </script>        
 <div class="main-content">
     <div class="content-section">
         <center><h1>Welcome to Untaped Games</h1></center>
@@ -456,7 +464,7 @@
             </div>
             </div>
             <button class="carousel-btn right-btn" onclick="scrollCarousel(1)">&#10095;</button>
-        </div>
+        </div> </div>
 
         <script>
         function scrollCarousel(direction) {
@@ -532,7 +540,8 @@
     
     </script>
     <body>
-        <h2>Games</h2>
+        <br>
+        <h2><b><center>Games</center></b></h2>
         <div id="game-container" class="game-display-container">
             <h3 id="game-title"></h3>
             <iframe id="game-frame"></iframe>
@@ -550,6 +559,11 @@
                 <img src="https://slope-play.com/data/image/game/slope-logo-1.jpg" alt="Paper.io">
                 <h3>Paper.io</h3>
             </div>
+            <div class="box" onclick="showGame('https://shellshock.io/', 'Paper.io')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc-SSpFIAgTauZ-k8N_NGkhUqSOSZ68z9XKQ&s" alt="Paper.io">
+                <h3>Paper.io</h3>
+            </div>
+
         </div>
     
         <script>
