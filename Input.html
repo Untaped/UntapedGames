@@ -59,6 +59,7 @@
   <form id="websiteForm">
     <input type="text" id="name" placeholder="Website Name" required>
     <input type="url" id="url" placeholder="Website URL" required>
+    <input type="url" id="img" placeholder="Image URL" required>
     <button type="submit">Add Website</button>
   </form>
 
@@ -73,6 +74,7 @@
 
       const name = document.getElementById('name').value.trim();
       const url = document.getElementById('url').value.trim();
+      const img = document.getElementById('img').value.trim();
 
       if (!name || !url || !img) return;
 
@@ -81,8 +83,10 @@
       card.innerHTML = `
         <img src="${img}" alt="${name}">
         <h3>${name}</h3>
-        <iframe src="${url}" title="${name}"></iframe>
-      `;
+        <iframe src="${url}" title="${name}" sandbox="allow-scripts allow-same-origin" onerror="this.style.display='none'; this.parentElement.innerHTML += '<p style=\\'color:red;\\'>Could not load the website. It may block embedding.</p>';"></iframe>
+        `;
+
+        <small>Note: Some websites may not display due to security restrictions.</small>
 
       cardsContainer.appendChild(card);
 
