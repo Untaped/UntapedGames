@@ -59,7 +59,6 @@
   <form id="websiteForm">
     <input type="text" id="name" placeholder="Website Name" required>
     <input type="url" id="url" placeholder="Website URL" required>
-    <input type="url" id="img" placeholder="Image URL" required>
     <button type="submit">Add Website</button>
   </form>
 
@@ -74,7 +73,6 @@
 
       const name = document.getElementById('name').value.trim();
       const url = document.getElementById('url').value.trim();
-      const img = document.getElementById('img').value.trim();
 
       if (!name || !url || !img) return;
 
