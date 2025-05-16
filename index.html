@@ -490,6 +490,7 @@
                 <option value="Wayback">Method A</option>
                 <option value="Cache">Method B</option>
                 <option value="12ft.io">Method C</option>
+                <option value="Norm">Method D</option>
       </select><br>
       
       <button type="submit">Add Archived View</button>
@@ -520,7 +521,8 @@
         archiveUrl = `cache:${url}`;
       } else if  (source == '12ft.io') {
         archiveUrl = 'https://12ft.io/';
-      }
+      } else if (source === 'Norm') {
+        archiveUrl = `${url}`;
 
       const card = document.createElement('div');
       card.className = 'card';
