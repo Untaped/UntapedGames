@@ -521,8 +521,9 @@
         archiveUrl = `cache:${url}`;
       } else if  (source == '12ft.io') {
         archiveUrl = 'https://12ft.io/';
-      } else if (source === 'Norm') {
+      } else if (source == 'Norm') {
         archiveUrl = `${url}`;
+      }
 
       const card = document.createElement('div');
       card.className = 'card';
